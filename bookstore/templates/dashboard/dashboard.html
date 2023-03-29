@@ -1,0 +1,50 @@
+{% extends 'layouts/master.html' %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="display-5 mb-2"><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
+    <div class="row mt-5">
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">View Products</h5>
+            <p class="card-text">Click here to view all products.</p>
+            <a href="{% url 'list-book' %}" class="btn btn-primary">View Products</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Add Product</h5>
+            <p class="card-text">Click here to add a new product.</p>
+            <a href="{% url 'add-book' %}" class="btn btn-primary">Add Product</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">View Categories</h5>
+            <p class="card-text">Click here to view all categories.</p>
+            <a href="{% url 'list-category' %}" class="btn btn-primary">View Categories</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Add Category</h5>
+            <p class="card-text">Click here to add a new category.</p>
+            <a href="{% url 'add-category' %}" class="btn btn-primary">Add Category</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

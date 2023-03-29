@@ -1,0 +1,62 @@
+{% extends "layouts/master.html" %}
+
+{% block title %}
+    Add Book
+{% endblock title %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="display-5 mb-2"><i class="fas fa-plus-square me-2"></i>Add Book</h1>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+          <div class="mb-3">
+              <label for="title" class="form-label">Title:</label>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fas fa-book"></i></span>
+                <input type="text" class="form-control" id="title" name="title" required>
+      </div>
+          </div>
+          <div class="mb-3">
+              <label for="author" class="form-label">Author:</label>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <input type="text" class="form-control" id="author" name="author" required>
+      </div>
+          </div>
+          <div class="mb-3">
+              <label for="description" class="form-label">Description:</label>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fas fa-comment"></i></span>
+                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+      </div>
+          </div>
+          <div class="mb-3">
+              <label for="price" class="form-label">Price:</label>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                <input type="number" class="form-control" id="price" name="price" min="0" step="0.01" required>
+      </div>
+          </div>
+          <div class="mb-3">
+              <label for="category" class="form-label">Category:</label>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fas fa-tags"></i></span>
+                <select class="form-select" id="category" name="category" required>
+                  <option value="">Select a category</option>
+                  {% for cat in category %}
+                  <option value="{{ cat.id }}">{{ cat.category_name }}</option>
+                  {% endfor %}
+                </select>
+      </div>
+          </div>
+          <div class="mb-3">
+              <label for="quantity" class="form-label">Quantity:</label>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fas fa-sort-numeric-up"></i></span>
+                <input type="number" class="form-control" id="quantity" name="quantity" min="0" required>
+      </div>
+          </div>
+          <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add Book</button>
+      </form>
+  </div>
+{% endblock content %}

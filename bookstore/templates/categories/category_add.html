@@ -1,0 +1,29 @@
+{% extends "layouts/master.html" %}
+
+{% block title %}
+    Add Category
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><i class="fas fa-plus"></i> Add Category</h3>
+          </div>
+          <div class="card-body">
+            <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+              <div class="mb-3">
+                <label for="category_name" class="form-label">Category Name</label>
+                <input type="text" class="form-control" id="category_name" name="category_name">
+              </div>
+              <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
