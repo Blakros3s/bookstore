@@ -1,0 +1,26 @@
+{% extends "layouts/master.html" %}
+{% load static %}
+
+{% block title %}
+    View Books
+{% endblock title %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-4">
+            <img src="{{ data.image.url }}" alt="Book Cover" class="img-fluid rounded shadow" style="max-width: 100%; height: auto; max-height: 400px;" />
+        </div>
+        <div class="col-lg-8">
+            <h2 class="mb-4"><i class="fas fa-book-open"></i> {{ data.title }}</h2>
+            <p><strong>Author:</strong> {{ data.author}}</p>
+            <p><strong>Description:</strong> {{ data.description }} </p>
+            <p><strong>Genre:</strong> {{ data.category }}</p>
+            <p><strong>Price:</strong> {{ data.price }}</p>
+            <p><strong>Quantity:</strong> {{ data.quantity }}</p>
+            <a href="#" class="btn btn-primary me-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+            <a href="#" class="btn btn-outline-secondary"><i class="fas fa-heart"></i> Add to Wishlist</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

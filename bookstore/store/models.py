@@ -16,7 +16,7 @@ class Book(models.Model):
     description = models.CharField(max_length=200)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     price = models.FloatField()
-    image = models.FileField(null=True, blank=True)
+    image = models.FileField(null=True, blank=True, upload_to="books/")
     quantity = models.IntegerField()
     
     class Meta:

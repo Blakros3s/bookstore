@@ -4,7 +4,7 @@ from .models import Book, Category
 class BookAddForm(forms.ModelForm):
     class Meta:
         # fields = "__all__" #for all fields
-        fields = ("title", "author", "description", "price", "category", "quantity")
+        fields = ("title", "author", "description", "price", "category", "quantity", "image")
         model = Book
 
 class CategoryAddForm(forms.ModelForm):
